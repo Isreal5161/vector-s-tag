@@ -1,27 +1,6 @@
 import { craftPillars } from "../data/siteContent";
-import { useEffect } from "react";
 
 export default function AboutPage() {
-	useEffect(() => {
-	const footer = document.querySelector(".footer");
-
-	const observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					footer.classList.add("reveal");
-				}
-			});
-		},
-		{ threshold: 0.2 }
-	);
-
-	if (footer) observer.observe(footer);
-
-	return () => {
-		if (footer) observer.unobserve(footer);
-	};
-}, []);
 	return (
 		<section className="page-section page-stack" data-reveal>
 			<div className="section-heading">
