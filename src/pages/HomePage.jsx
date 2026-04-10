@@ -54,7 +54,7 @@ export default function HomePage() {
 								<span className="hero-chip">Original Pattern Cuts</span>
 								<span className="hero-chip">Wholesale + Consumer</span>
 							</div>
-							<h1>Pure design. No limits. A modern street uniform crafted with precision.</h1>
+							<h1>Pure design. No limits. A modern street wears crafted with precision.</h1>
 							<p className="hero-intro-copy">
 								Vector&apos;s Tag builds menswear the long way: drafting proportions in-house, selecting materials for
 								texture and memory, and shaping garments that land somewhere between vintage discipline, street
