@@ -49,7 +49,7 @@ export default function SiteLayout({ currentPage, isHeaderCondensed, scrollProgr
 
 				<footer className="footer">
 					<span>Vector's Tag</span>
-					<span>Vintage menswear, tailored from scratch.</span>
+					<span>Copyright @ Vector's Tag 2026 </span>
 				</footer>
 			</div>
 		</div>
