@@ -35,8 +35,8 @@ export const channels = [
 ];
 
 export const contactDetails = [
-	{ label: "Brand Position", value: "Vintage smart menswear" },
-	{ label: "Production Mindset", value: "Built from scratch" },
+	{ label: "Brand Position", value: "Hoodie, joggers, short nickers, cargo pants" },
+	{ label: "Production Mindset", value: "Consistent. Durable. Controlled." },
 	{ label: "Business Model", value: "Wholesale + consumer" },
 	{ label: "Core Palette", value: "Deep emerald, neon mint, black" }
 ];
