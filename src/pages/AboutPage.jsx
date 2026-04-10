@@ -9,8 +9,8 @@ export default function AboutPage() {
 					<h2>Crafted to feel lived-in, finished to feel elevated.</h2>
 				</div>
 				<p>
-					Vector&apos;s Tag stands between vintage influence and modern tailoring, with a focus on menswear that
-					looks individual before it even gets styled.
+					Vector&apos;s Tag stands between street wear influence and modern tailoring, 
+					with a focus on menswear that looks individual before it even gets styled.
 				</p>
 			</div>
 
