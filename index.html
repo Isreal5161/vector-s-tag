@@ -7,6 +7,34 @@
 			name="description"
 			content="Vector's Tag builds vintage smart menswear from scratch using distinctive materials for wholesale and direct clients."
 		/>
+		<script>
+			(function () {
+				var storageKey = "vector-mobile-desktop-first-visit";
+				var isSmallScreen = window.matchMedia && window.matchMedia("(max-width: 760px)").matches;
+				var hasSeenSite = false;
+
+				try {
+					hasSeenSite = window.localStorage.getItem(storageKey) === "seen";
+				} catch (error) {
+					hasSeenSite = false;
+				}
+
+				if (!isSmallScreen || hasSeenSite) {
+					return;
+				}
+
+				var viewport = document.querySelector('meta[name="viewport"]');
+
+				if (viewport) {
+					viewport.setAttribute("content", "width=1280, initial-scale=1.0");
+				}
+
+				try {
+					window.localStorage.setItem(storageKey, "seen");
+				} catch (error) {
+				}
+			})();
+		</script>
 		<title>Vector's Tag</title>
 	</head>
 	<body>
