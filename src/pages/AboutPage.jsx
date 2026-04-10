@@ -35,7 +35,7 @@ export default function AboutPage() {
 
 				<div className="story-column">
 					<div className="tailoring-block">
-						<p>Vintage references. Modern proportions. Tailoring discipline. Original construction.</p>
+						<p> Rooted in streetwear. Defined by modern form. Guided by tailoring expertise. Built with originality.</p>
 					</div>
 					<div className="quote-card">
 						<span>Vector Standard</span>
