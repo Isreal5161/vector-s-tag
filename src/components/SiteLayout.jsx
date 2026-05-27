@@ -12,14 +12,14 @@ export default function SiteLayout({ currentPage, isHeaderCondensed, scrollProgr
 						style={{ "--scroll-progress": scrollProgress }}
 					>
 						<div className="nav-left">
-							<a className="header-shop-button" href={shopHref} rel="noreferrer" target="_blank">
-								<span className="header-shop-button-dot" aria-hidden="true" />
-								{headerShopCta.label}
-							</a>
-
 							<div className="brand">
-								<span className="brand-mark">Hoodies Joggers Atelier</span>
-								<a className="brand-name" href="#home">Vector's Tag</a>
+								<a className="brand-logo-link" href="#home" aria-label="Vector's Tag home">
+									<img className="brand-logo" src="/VECTOR'S-TAG-LOGO.jpg" alt="Vector's Tag" />
+								</a>
+								<div className="brand-copy">
+									<span className="brand-mark">Hoodies Joggers Atelier</span>
+									<a className="brand-name" href="#home">Vector's Tag</a>
+								</div>
 							</div>
 						</div>
 
@@ -41,6 +41,13 @@ export default function SiteLayout({ currentPage, isHeaderCondensed, scrollProgr
 							</nav>
 						</div>
 					</header>
+
+					<div className="sticky-shop-bar">
+						<a className="header-shop-button" href={shopHref} rel="noreferrer" target="_blank">
+							<span className="header-shop-button-dot" aria-hidden="true" />
+							{headerShopCta.label}
+						</a>
+					</div>
 				</div>
 
 				<div aria-hidden="true" className="nav-spacer" />

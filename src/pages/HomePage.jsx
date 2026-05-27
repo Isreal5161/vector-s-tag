@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { channels, featuredLines, heroLooks } from "../data/siteContent";
+import { channels, featuredLines, getWhatsAppHref, heroLooks } from "../data/siteContent";
 
 export default function HomePage() {
 	const [parallaxOffset, setParallaxOffset] = useState(0);
@@ -41,6 +41,8 @@ export default function HomePage() {
 	const showNextLook = () => {
 		setActiveLook((current) => (current + 1) % heroLooks.length);
 	};
+
+	const getBookNowHref = (lookName) => getWhatsAppHref(`Hi Vector's Tag, I want to book ${lookName}. Please share availability, pricing, and next steps.`);
 
 	return (
 		<>
@@ -164,6 +166,15 @@ export default function HomePage() {
 									<div className="hero-look-copy">
 										<h3>{look.name}</h3>
 										<p>{look.description}</p>
+										<a
+											aria-label={`Book ${look.name}`}
+											className="hero-look-book-button"
+											href={getBookNowHref(look.name)}
+											rel="noreferrer"
+											target="_blank"
+										>
+											Book now
+										</a>
 									</div>
 								</article>
 							))}
