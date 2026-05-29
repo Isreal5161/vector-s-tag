@@ -800,6 +800,39 @@
 	text-shadow: 0 10px 28px rgba(0, 0, 0, 0.56);
 }
 
+@media (max-width: 760px) {
+	.hero-top-grid {
+ 		grid-template-columns: 1fr;
+ 		gap: clamp(24px, 6vw, 42px);
+ 	}
+
+ 	.hero-main-column {
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+
+ 	.hero-manifesto {
+ 		grid-template-columns: 1fr;
+ 	}
+
+ 	.hero-manifesto span {
+ 		text-align: center;
+ 	}
+
+ 	.hero-actions {
+ 		justify-content: center;
+ 	}
+
+ 	.hero-stats {
+ 		grid-template-columns: 1fr;
+ 		text-align: center;
+ 	}
+
+ 	.hero-intro-copy {
+ 		max-width: 100%;
+ 	}
+}
+
 .quote-card {
 	padding: 18px 22px;
 	border-radius: 22px;
