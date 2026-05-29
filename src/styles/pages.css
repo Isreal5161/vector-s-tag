@@ -800,37 +800,60 @@
 	text-shadow: 0 10px 28px rgba(0, 0, 0, 0.56);
 }
 
-@media (max-width: 760px) {
+/* Stretch hero to viewport edges on tablet and improve stacking on mobile */
+@media (max-width: 1024px) {
+	.hero-section {
+		margin-inline: 0;
+		padding: 30px 12px 72px;
+	}
+
+	/* Allow the hero panel to take more horizontal space while keeping the swiper visible */
 	.hero-top-grid {
- 		grid-template-columns: 1fr;
- 		gap: clamp(24px, 6vw, 42px);
- 	}
+		grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+		gap: 32px;
+	}
 
- 	.hero-main-column {
- 		align-items: center;
- 		text-align: center;
- 	}
+	.hero-swiper-stage {
+		min-height: clamp(420px, 40vw, 560px);
+	}
+}
 
- 	.hero-manifesto {
- 		grid-template-columns: 1fr;
- 	}
+@media (max-width: 760px) {
+	.hero-section {
+		margin-inline: 0;
+		padding: 24px 12px 56px;
+	}
 
- 	.hero-manifesto span {
- 		text-align: center;
- 	}
+	.hero-top-grid {
+		grid-template-columns: 1fr;
+		gap: clamp(24px, 6vw, 42px);
+	}
 
- 	.hero-actions {
- 		justify-content: center;
- 	}
+	.hero-main-column {
+		align-items: center;
+		text-align: center;
+	}
 
- 	.hero-stats {
- 		grid-template-columns: 1fr;
- 		text-align: center;
- 	}
+	.hero-manifesto {
+		grid-template-columns: 1fr;
+	}
 
- 	.hero-intro-copy {
- 		max-width: 100%;
- 	}
+	.hero-manifesto span {
+		text-align: center;
+	}
+
+	.hero-actions {
+		justify-content: center;
+	}
+
+	.hero-stats {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.hero-intro-copy {
+		max-width: 100%;
+	}
 }
 
 .quote-card {
