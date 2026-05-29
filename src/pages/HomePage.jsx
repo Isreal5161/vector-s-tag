@@ -47,7 +47,7 @@ export default function HomePage() {
 	return (
 		<>
 			<section className="hero-section">
-				<div className="hero-copy panel hero-panel" data-reveal>
+				<div className="hero-copy hero-panel" data-reveal>
 					<div className="hero-top-grid">
 						<div className="hero-main-column">
 							<span className="eyebrow">Defined by Design</span>
@@ -102,6 +102,9 @@ export default function HomePage() {
 											<img
 												alt={look.name}
 												className="hero-swiper-image"
+												decoding={index === 0 ? "sync" : "async"}
+												fetchPriority={index === 0 ? "high" : "low"}
+												loading={index === 0 ? "eager" : "lazy"}
 												src={look.image}
 												style={{ transform: `translateY(${parallaxOffset * (index % 2 === 0 ? -0.45 : -0.28)}px) scale(1.08)` }}
 											/>
@@ -158,6 +161,9 @@ export default function HomePage() {
 										<img
 											alt={look.name}
 											className="hero-look-image"
+											decoding="async"
+											fetchPriority="low"
+											loading="lazy"
 											src={look.image}
 											style={{ transform: `translateY(${parallaxOffset * (index % 2 === 0 ? -0.45 : -0.28)}px) scale(1.05)` }}
 										/>

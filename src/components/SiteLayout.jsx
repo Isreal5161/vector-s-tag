@@ -14,7 +14,15 @@ export default function SiteLayout({ currentPage, isHeaderCondensed, scrollProgr
 						<div className="nav-left">
 							<div className="brand">
 								<a className="brand-logo-link" href="#home" aria-label="Vector's Tag home">
-									<img className="brand-logo" src="/VECTOR'S-TAG-LOGO.jpg" alt="Vector's Tag" />
+									<img
+										alt="Vector's Tag"
+										className="brand-logo"
+										decoding="async"
+										fetchPriority="high"
+										height="256"
+										src="/vectors-tag-logo-256.jpg"
+										width="256"
+									/>
 								</a>
 								<div className="brand-copy">
 									<span className="brand-mark">Hoodies Joggers Atelier</span>
