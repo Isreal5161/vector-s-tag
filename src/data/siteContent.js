@@ -60,6 +60,13 @@ export const heroLooks = [
 		description: "Lightweight comfort built for everyday movement.",
 		image: "Short-Nickers.jpeg"
 	}
+	,
+	{
+		name: "Joggers",
+		label: "Joggers",
+		description: "Tapered, comfortable joggers built for everyday wear.",
+		image: "image2.jpeg"
+	}
 ];
 
 export const navItems = [

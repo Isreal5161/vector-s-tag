@@ -1248,6 +1248,20 @@
 		bottom: 92px;
 		width: 38%;
 	}
+
+	/* Compact product title and copy for narrow mobile */
+	.hero-look-copy h3 {
+		font-size: 0.86rem;
+		font-weight: 600;
+		line-height: 1.08;
+		margin-bottom: 6px;
+	}
+
+	.hero-look-copy p {
+		font-size: 0.82rem;
+		line-height: 1.35;
+		margin-bottom: 8px;
+	}
 }
 
 @keyframes mobileCardTap {
