@@ -80,7 +80,7 @@
 	display: grid;
 	grid-template-columns: minmax(0, 1.12fr) minmax(380px, 0.88fr);
 	gap: clamp(42px, 6vw, 92px);
-	align-items: center;
+	align-items: stretch;
 }
 
 .hero-main-column {
@@ -171,6 +171,10 @@
 	gap: 14px;
 	margin-top: 24px;
 	margin-bottom: 4px;
+	/* Make manifesto items equal height and stretch to fill column */
+	grid-auto-rows: 1fr;
+	height: 100%;
+	align-items: stretch;
 }
 
 .hero-manifesto span {
@@ -182,6 +186,10 @@
 	font-size: 0.92rem;
 	line-height: 1.55;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 .hero-actions {
@@ -447,7 +455,6 @@
 
 .hero-lookbook-grid {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 18px;
 }
 
@@ -800,6 +807,73 @@
 	text-shadow: 0 10px 28px rgba(0, 0, 0, 0.56);
 }
 
+/* Typography and product grid responsive tweaks (mobile-first)
+   Default: 2 columns on small screens
+   Tablet: 3 columns
+   Desktop: 4 columns */
+
+.hero-lookbook-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+}
+
+@media (min-width: 600px) {
+	.hero-lookbook-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1100px) {
+	.hero-lookbook-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+/* Keep card layout tight and consistent */
+.hero-look-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 16px;
+	padding: 0;
+}
+
+.hero-look-copy {
+	padding: 12px;
+}
+
+/* Reduce hero heading size on smaller viewports for a more professional look */
+@media (max-width: 1024px) {
+	.hero-copy h1 {
+		font-size: clamp(2.4rem, 4.8vw, 3.4rem);
+		max-width: 46ch;
+		line-height: 1.05;
+	}
+
+	.hero-swiper-overlay h3 {
+		font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+	}
+}
+
+@media (max-width: 760px) {
+	.hero-copy h1 {
+		font-size: clamp(1.6rem, 5.5vw, 2.4rem);
+		max-width: 52ch;
+		margin-top: 8px;
+		line-height: 1.08;
+	}
+
+	.hero-swiper-overlay h3 {
+		font-size: 1.4rem;
+	}
+
+	.hero-look-copy h3 {
+		font-size: 1.05rem;
+	}
+}
+
+
 /* Stretch hero to viewport edges on tablet and improve stacking on mobile */
 @media (max-width: 1024px) {
 	.hero-section {
@@ -853,6 +927,74 @@
 
 	.hero-intro-copy {
 		max-width: 100%;
+	}
+}
+
+/* Stronger mobile density adjustments to allow 2 product cards per row */
+@media (max-width: 560px) {
+	/* Reduce hero heading and supporting copy for compact layout */
+	.hero-copy h1 {
+		font-size: clamp(1.1rem, 5vw, 1.8rem);
+		max-width: 36ch;
+		line-height: 1.04;
+		margin-bottom: 8px;
+	}
+
+	.hero-intro-copy {
+		font-size: 0.95rem;
+		max-width: 100%;
+	}
+
+	.hero-manifesto span {
+		font-size: 0.86rem;
+		padding: 10px 12px;
+	}
+
+	.hero-actions .button {
+		min-height: 40px;
+		padding: 0 14px;
+		font-size: 0.85rem;
+	}
+
+	/* Reduce swiper height so gallery and product grid can show earlier */
+	.hero-swiper-stage {
+		min-height: clamp(240px, 30vw, 360px);
+	}
+
+	/* Tighter product grid and cards */
+	.hero-lookbook-grid {
+		gap: 12px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.hero-look-card {
+		border-radius: 12px;
+		padding: 0;
+	}
+
+	.hero-look-image-wrap {
+		aspect-ratio: 3 / 4;
+	}
+
+	.hero-look-copy {
+		padding: 8px 10px;
+	}
+
+	.hero-look-copy h3 {
+		font-size: 0.92rem;
+		margin-bottom: 4px;
+		line-height: 1.12;
+	}
+
+	.hero-look-copy p {
+		font-size: 0.82rem;
+		line-height: 1.4;
+		margin-bottom: 8px;
+	}
+
+	/* Reduce spacing above gallery */
+	.hero-gallery {
+		margin-top: 18px;
 	}
 }
 
@@ -913,12 +1055,33 @@
 		padding: 24px 0 0;
 	}
 
+	/* Keep hero as two columns on tablet so content fills the right-side space */
+
 	.hero-top-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+		gap: clamp(28px, 5vw, 48px);
 	}
 
+	/* Reduce overall hero height on tablet so manifesto cards can stretch vertically */
+	.hero-panel {
+		min-height: min(64vh, 720px);
+	}
+
+	/* Make manifesto occupy full column height and let cards be taller */
+	.hero-manifesto {
+		grid-auto-rows: 1fr;
+		height: 100%;
+	}
+
+	/* Slightly reduce swiper height to allow manifesto to fill more vertical space */
+	.hero-swiper-stage {
+		min-height: clamp(300px, 34vw, 480px);
+	}
+
+	/* Reduce heading size on tablet for better balance */
+
 	.hero-copy h1 {
-		font-size: clamp(3.6rem, 9vw, 6rem);
+		font-size: clamp(2.4rem, 4.8vw, 3.6rem);
 		max-width: 11ch;
 	}
 
@@ -929,9 +1092,11 @@
 	}
 
 	.hero-manifesto,
-	.hero-stats,
-	.card-grid-three,
-	.hero-lookbook-grid {
+	.hero-stats {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.card-grid-three {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
@@ -939,9 +1104,7 @@
 		min-height: 560px;
 	}
 
-	.hero-look-card:last-child {
-		grid-column: 1 / -1;
-	}
+	/* keep individual look cards in the grid — do not force last child full-width */
 }
 
 @media (max-width: 760px) {
@@ -1041,13 +1204,10 @@
 		grid-template-columns: 1fr;
 	}
 
+	/* Use 2 columns on narrow mobile screens for a compact e-commerce layout */
 	.hero-lookbook-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.hero-look-card:last-child {
-		grid-column: 1 / -1;
-		width: 100%;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
 	}
 
 	.hero-copy h1 {
